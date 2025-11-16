@@ -3,20 +3,6 @@
 <a asp-controller="Painting" asp-action="Create" class="btn btn-primary">Добави картина</a>
 </br>
 
-<style>
-    .card-hover-effect {
-        transition: transform 0.2s;
-    }
-
-        .card-hover-effect:hover {
-            transform: translateY(-5px);
-        }
-    .btn {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-</style>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-2 mt-3">
     @foreach (var item in Model.Data)
     {
