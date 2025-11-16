@@ -1,0 +1,42 @@
+﻿@model PaintingsTableViewModel
+
+<a asp-controller="Painting" asp-action="Create" class="btn btn-primary">Добави картина</a>
+</br>
+
+<style>
+    .card-hover-effect {
+        transition: transform 0.2s;
+    }
+
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+        }
+    .btn {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-2 mt-3">
+    @foreach (var item in Model.Data)
+    {
+        <div class="col">
+            <div class="card card-hover-effect h-100">
+                <div class="p-2">
+                    <img src='@Url.Content("~/" + item.ImagePath)' class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@StringUtils.GetWordsFromString(item.Description, 10)...</p>
+                </div>
+                <div class="card-footer d-flex gap-2 p-2">
+                    <a asp-controller="Painting" asp-action="Update" asp-route-Id="@item.Id" class="upt-btn flex-grow-1">Редактирай</a>
+                    <form method="post" action="@Url.Action("Delete", "Painting")" onsubmit="return confirm('Наистина ли искате да изтриете картина: @item.Name?');" class="m-0">
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <button type="submit" class="flex-grow-1 del-btn" title="Изтриване">Изтрий</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>

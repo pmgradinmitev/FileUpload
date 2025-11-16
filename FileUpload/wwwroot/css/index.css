@@ -1,0 +1,42 @@
+﻿a.upt-btn:link,
+a.upt-btn:visited,
+a.upt-btn:hover,
+a.upt-btn:active {
+    color: white;
+    text-decoration: none; /* Keep no underline */
+}
+.upt-btn {
+    background: linear-gradient(135deg, rgb(33, 150, 243), rgb(66, 165, 245));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: 0.3s;
+    box-shadow: rgba(33, 150, 243, 0.2) 0px 2px 4px;
+    transform: translateY(0px);
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+}
+.upt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(33, 150, 243, 0.3);
+}
+
+.del-btn {
+    background: linear-gradient(135deg, rgb(255, 152, 0), rgb(255, 183, 77));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: 0.3s;
+    box-shadow: rgba(255, 152, 0, 0.2) 0px 2px 4px;
+    transform: translateY(0px);
+}
+.del-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+}
